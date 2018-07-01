@@ -20,14 +20,14 @@ double find(double a, double b, double h) {
   cout << "Метод Эйлера" << endl;
 
   // Выводим начальные точки функции
-  cout << x << " " << y << endl;
+  cout << x << ": " << y << endl;
 
   for (double i=1; i<=(b-a)/h; i++) {
     // Подсчитываем x и y
     x = a + i * h;
     y = y + h * function(x, y);
     // Выводим значения функции на экран
-    cout << x << " " << y << endl;
+    cout << x << ": " << y << endl;
   }
 }
 
@@ -40,7 +40,7 @@ double find2(double a, double b, double h) {
   double y = 0;
 
   cout << endl << "Метод Рунге-Кутты" << endl;
-  cout << x << " " << y << endl;
+  cout << x << ": " << y << endl;
 
   for (double i=1;i<=(b-a)/h; i++) {
     double k1 = function(x,y);
@@ -50,7 +50,7 @@ double find2(double a, double b, double h) {
     x = a + i * h;
     y = y + h/6 * (k1 + 2*k2 + 2*k3 + k4);
     // Выводим значения функции на экран
-    cout << x << " " << y << endl;
+    cout << x << ": " << y << endl;
   }
 }
 

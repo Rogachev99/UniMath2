@@ -35,12 +35,10 @@ double find(double x, double eps) {
 // Метод Ньютона
 double find2(double x, double eps) {
   double fun;
-  int iter = 0;
   while (true) {
       fun = function(x);
       x = x - fun / p_function(x); // текущая точка
       // Если значение функции меньше eps
-      iter++;
       if (abs(fun) < eps) {
         // выходим из цикла
         break;
