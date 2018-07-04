@@ -2,22 +2,6 @@
 #include <cmath>
 using namespace std;
 
-
-// Метод Эйлера
-// a - начало промежутка
-// b - конец-промежутка
-double find(double a, double b, double h) {
-
-  // Начальные условия
-}
-
-// Метод Рунге-Кутты
-// a - начало промежутка
-// b - конец-промежутка
-double find2(double a, double b, double h) {
-  // Начальные условия
-}
-
 double funkcia(double x, double y);
 void print(double x, double y);
 
@@ -34,7 +18,6 @@ int main() {
 
   x = 0; y = 0;
   print(x, y);
-
   double k1, k2, k3, k4;
   for (double i=1;i<=(b-a)/h; i++) {
     k1 = funkcia(x,y);
