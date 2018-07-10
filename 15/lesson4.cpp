@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <fstream>
 using namespace std;
 
 double fn(double x, double y) {
@@ -16,31 +15,23 @@ int main() {
   double x = 0;
   double y = 0;
 
-  ofstream file;
-  file.open("data1.dat");
-
   // Первый метод или метод Эйлера
-  //cout << x << " \t " << y << endl;
-  file << x << " " << y << endl;
+  cout << x << " \t " << y << endl;
   for (double counter=1; counter<=(b-a)/h; counter++) {
     x = a + counter * h; // подсчитываем x
     y = y + h * fn(x, y); // подсчитываем значение функции
     // выводим на экран
-    //cout << x << " \t " << y << endl;
-    file << x << " " << y << endl;
+    cout << x << " \t " << y << endl;
   }
-  file.close();
 
-  file.open("data2.dat");
   // второй метод или метод Рунге-Кутты
   // Снова задаём начальные условия перед вычислением второго метода
   x = 0;
   y = 0;
   // оставляем пустой отступ для лучшей читабельности
-  // cout << endl;
+  cout << endl;
 
-  // cout << x << " \t " << y << endl;
-  file << x << " " << y << endl;
+  cout << x << " \t " << y << endl;
   for (double counter = 1; counter <= (b-a) / h; counter++) {
 
     double k1 = fn(x,y);
@@ -52,10 +43,8 @@ int main() {
     // Подсчитываем значение функции
     y = y + h/6 * (k1 + 2*k2 + 2*k3 + k4);
     // Выводим значения функции на экран
-    // cout << x << " \t " << y << endl;
-    file << x << " " << y << endl;
+    cout << x << " \t " << y << endl;
   }
-  file.close();
 
   return 0;
 }
